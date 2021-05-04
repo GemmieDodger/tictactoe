@@ -8,7 +8,9 @@ class Computer {
 
     }
     randomPlay = () => {
+        
         const random = this.getRandomNumber()
+        
         return random;
     }
 }

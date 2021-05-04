@@ -16,7 +16,7 @@ const StateTurn = styled.h3 `
     text-align:center;
     margin-top:20px;
     grid-column:1/3;
-    color: #ffffcc;
+    color: purple;
     @media(max-width:768px) {
         grid-row:2/3;
         grid-column:1/2;
@@ -31,8 +31,8 @@ const WinnerContainer = styled.div `
     background-color: black;
     color: white;
     transform: translate(-50%, -50%);
-    height:400px;
-    width:500px;
+    height:200px;
+    width:200px;
     border:4px solid white;
     padding:2px;
     max-width:100vw;
@@ -76,7 +76,7 @@ const Game = () => {
     const [renderWinner, setRenderWinner] = useState(false)
     const [renderGameboards, setRenderGameboards] = useState(false)
     const [renderMenu, setRenderMenu] = useState(true);
-    console.log(gameboard)
+    console.log(players.player.turn)
     useEffect(() => {
         winner ? setRenderWinner(true) : setRenderWinner(false)
     }, [winner])

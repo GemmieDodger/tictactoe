@@ -19,10 +19,10 @@ const startNewGame = () => {
             computer: new Computer(),
         })
         setGameboard(new newGameboard())
-        console.log(gameboard)
     }
 
 const changePlayersTurn = () => {
+    console.log(players.player.turn)
         setPlayers(prevState => ({
             player: {
                 ...prevState.player,
@@ -33,20 +33,23 @@ const changePlayersTurn = () => {
                 turn: !prevState.computer.turn
             }
         }))
+        console.log(players.player.turn)
     }
 
     const checkWinner = () => {
         if(gameboard.checkForWinner()){
-            setWinner()
+            setWinner(gameboard.winner)
         }
     }
 
     const cellOnClick = (cell) => {
        gameboard.playTurn(cell, players.player.counter);
        checkWinner();
-       changePlayersTurn();
-       gameboard.playTurn(players.computer.randomTurn(), players.computer.counter)
+       setPlayers(prevState => ({...prevState}))
+       gameboard.playTurn(players.computer.randomPlay(gameboard.board), players.computer.counter);
        checkWinner();
+       setPlayers(prevState => ({...prevState}))
+       changePlayersTurn();
     }
     return {cellOnClick, checkWinner, winner, startNewGame, changePlayersTurn, players, gameboard}
 }
