@@ -76,7 +76,6 @@ const Game = () => {
     const [renderWinner, setRenderWinner] = useState(false)
     const [renderGameboards, setRenderGameboards] = useState(false)
     const [renderMenu, setRenderMenu] = useState(true);
-    console.log(players.player.turn)
     useEffect(() => {
         winner ? setRenderWinner(true) : setRenderWinner(false)
     }, [winner])

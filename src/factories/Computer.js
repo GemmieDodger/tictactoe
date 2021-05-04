@@ -1,6 +1,6 @@
 class Computer {
     constructor() {
-        this.turn = true;
+        this.turn = false;
         this.counter = 'O';
     }
     getRandomNumber() {
@@ -8,9 +8,7 @@ class Computer {
 
     }
     randomPlay = () => {
-        
         const random = this.getRandomNumber()
-        
         return random;
     }
 }

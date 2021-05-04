@@ -83,7 +83,7 @@ const Gameboards = (props) => {
                                 <Space
                                 key={index} 
                                 onClick={(e) => cellOnClick(index)}
-                                ></Space>
+                                >{num}</Space>
                 
 
                 )}
